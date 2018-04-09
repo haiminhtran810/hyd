@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
-            type="vn.home.htm.tripdemo.screen.weather.SettingUnitWeather.SettingUnitWeatherViewModel"/>
+            type="vn.home.htm.tripdemo.screen.weather.SettingUnitWeather.SettingUnitWeatherViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -93,8 +94,9 @@
                             android:layout_weight="1"
                             android:background="@drawable/toggle_widget_background"
                             android:button="@null"
+                            android:checked="@{viewModel.isTemperatureF}"
                             android:gravity="center"
-                            android:text="F" />
+                            android:text="@string/set_f" />
 
                         <RadioButton
                             android:layout_width="wrap_content"
@@ -105,8 +107,9 @@
                             android:layout_weight="1"
                             android:background="@drawable/toggle_widget_background"
                             android:button="@null"
+                            android:checked="@{!viewModel.isTemperatureF}"
                             android:gravity="center"
-                            android:text="C" />
+                            android:text="@string/set_c" />
                     </RadioGroup>
 
                 </RelativeLayout>
@@ -156,8 +159,9 @@
                             android:layout_weight="1"
                             android:background="@drawable/toggle_widget_background"
                             android:button="@null"
+                            android:checked="@{viewModel.isTimeA}"
                             android:gravity="center"
-                            android:text="F" />
+                            android:text="@string/set_12" />
 
                         <RadioButton
                             android:layout_width="wrap_content"
@@ -168,8 +172,9 @@
                             android:layout_weight="1"
                             android:background="@drawable/toggle_widget_background"
                             android:button="@null"
+                            android:checked="@{!viewModel.isTimeA}"
                             android:gravity="center"
-                            android:text="C" />
+                            android:text="@string/set_24" />
                     </RadioGroup>
 
                 </RelativeLayout>
@@ -250,6 +255,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_alignParentEnd="true"
+                        android:checked="@{viewModel.isNotification}"
+
                         android:textColor="@android:color/white" />
 
                 </RelativeLayout>
@@ -288,6 +295,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_alignParentEnd="true"
+                        android:checked="@{viewModel.isStatus}"
+
                         android:textColor="@android:color/white" />
 
                 </RelativeLayout>
@@ -295,13 +304,13 @@
             </LinearLayout>
 
             <Button
-                android:onClick="@{()->viewModel.listenerDone()}"
                 android:id="@+id/btn_jump"
                 android:layout_width="128dp"
                 android:layout_height="48dp"
                 android:layout_marginBottom="@dimen/dp10"
                 android:layout_marginTop="@dimen/dp10"
                 android:background="@drawable/bg_button_gray_coner"
+                android:onClick="@{()->viewModel.listenerDone()}"
                 android:text="@string/done"
                 android:textColor="@android:color/white" />
         </LinearLayout>

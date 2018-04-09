@@ -1,4 +1,4 @@
-package vn.home.htm.tripdemo.data.local;
+package vn.home.htm.tripdemo.data.source.local;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -37,6 +37,21 @@ public class SharedPreferenceApi {
             editor.putLong(key, (Long) data);
         }
         editor.apply();
+    }
+
+    public <T> T get(String key, Class<T> clazz, T defValue) {
+        if (clazz == String.class) {
+            return (T) mSharedPreferences.getString(key, (String) defValue);
+        } else if (clazz == Boolean.class) {
+            return (T) Boolean.valueOf(mSharedPreferences.getBoolean(key, (Boolean) defValue));
+        } else if (clazz == Float.class) {
+            return (T) Float.valueOf(mSharedPreferences.getFloat(key, (Float) defValue));
+        } else if (clazz == Integer.class) {
+            return (T) Integer.valueOf(mSharedPreferences.getInt(key, (Integer) defValue));
+        } else if (clazz == Long.class) {
+            return (T) Long.valueOf(mSharedPreferences.getLong(key, (Long) defValue));
+        }
+        return null;
     }
 
     public void clear(){
