@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TripDemo</string>
+    <string name="done">Done</string>
+    <string name="setting">SETTING</string>
+    <string name="set_time">Time</string>
+    <string name="set_temperature">Temperature</string>
+    <string name="set_wind_speed">Wind speed</string>
+    <string name="set_notification">Notification</string>
+    <string name="set_status">Status</string>
+    <string name="set_f">F</string>
+    <string name="set_c">C</string>
+    <string name="set_12">12</string>
+    <string name="set_24">24</string>
+    <string name="unit_wind">km/h ></string>
+</resources>
